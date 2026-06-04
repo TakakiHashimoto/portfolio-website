@@ -8,9 +8,10 @@ import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import { usePortFolioProgress } from "./hooks/usePortfolioProgress";
 import { levelThemes } from "./styles/levelThemes";
+import { usePortfolioStore } from "./store/portfolioStore";
 
 function App() {
-  const { level } = usePortFolioProgress();
+  const level = usePortfolioStore((state) => state.level);
   const theme = levelThemes[level];
   return (
     <Routes>

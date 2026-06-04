@@ -1,6 +1,4 @@
-import { colors } from "./designTokens";
-
-export type UnlockLevel = 0 | 1 | 2 | 3 | 4;
+import type { UnlockLevel } from "../store/portfolioStore";
 
 export const levelThemes: Record<
   UnlockLevel,

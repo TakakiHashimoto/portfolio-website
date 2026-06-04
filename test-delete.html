@@ -1,0 +1,396 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Geist+Mono:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdf93",
+              background: "#fdf7ff",
+              "surface-container": "#f2ecf4",
+              error: "#ba1a1a",
+              "surface-container-high": "#ece6ee",
+              "primary-container": "#6750a4",
+              surface: "#fdf7ff",
+              "on-tertiary-fixed": "#241a00",
+              "on-secondary-fixed-variant": "#4b4263",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#e0d2ff",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#1f1635",
+              "surface-container-highest": "#e6e0e9",
+              "secondary-container": "#e1d4fd",
+              "primary-fixed": "#e9ddff",
+              "surface-container-low": "#f8f2fa",
+              "on-primary": "#ffffff",
+              "surface-dim": "#ded8e0",
+              "inverse-primary": "#cfbcff",
+              "tertiary-fixed-dim": "#e7c365",
+              "on-tertiary-container": "#503d00",
+              "surface-tint": "#6750a4",
+              tertiary: "#765b00",
+              primary: "#4f378a",
+              "on-error": "#ffffff",
+              "on-background": "#1d1b20",
+              "inverse-surface": "#322f35",
+              "primary-fixed-dim": "#cfbcff",
+              "outline-variant": "#cbc4d2",
+              "on-surface": "#1d1b20",
+              "on-surface-variant": "#494551",
+              "on-primary-fixed-variant": "#4f378a",
+              "surface-bright": "#fdf7ff",
+              "secondary-fixed": "#e9ddff",
+              secondary: "#63597c",
+              "surface-variant": "#e6e0e9",
+              "on-secondary-container": "#645a7d",
+              "on-primary-fixed": "#22005d",
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#f5eff7",
+              "on-tertiary-fixed-variant": "#594400",
+              "tertiary-container": "#c9a74d",
+              "secondary-fixed-dim": "#cdc0e9",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              outline: "#7a7582",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              unit: "4px",
+              margins: "{'lvl_0': '0px', 'lvl_1_4': '32px'}",
+              gutter: "24px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "display-lvl4": ["Geist"],
+              "body-legacy": ["Times New Roman"],
+              "mono-label": ["Geist Mono"],
+              "headline-lvl2": ["Geist"],
+              "body-standard": ["Geist"],
+            },
+            fontSize: {
+              "display-lvl4": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.05em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-legacy": [
+                "16px",
+                { lineHeight: "normal", fontWeight: "400" },
+              ],
+              "mono-label": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "500" },
+              ],
+              "headline-lvl2": [
+                "32px",
+                { lineHeight: "1.2", fontWeight: "600" },
+              ],
+              "body-standard": [
+                "16px",
+                { lineHeight: "1.6", fontWeight: "400" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #f2ecf4; /* Level 1 light gray surface */
+        color: #1d1b20;
+        font-family: "Geist", sans-serif;
+        transition: all 0.5s ease;
+      }
+      .dark body {
+        background-color: #1d1b20;
+        color: #e6e0e9;
+      }
+      .initialization-bar-container {
+        width: 100%;
+        height: 8px;
+        background: #cbc4d2;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .initialization-bar-fill {
+        height: 100%;
+        width: 25%;
+        background: #4f378a;
+        transition: width 1s ease-in-out;
+      }
+      .card-lvl1 {
+        border: 1px solid #cbc4d2;
+        background: #fdf7ff;
+        padding: 24px;
+      }
+      .dark .card-lvl1 {
+        border: 1px solid #494551;
+        background: #2b2930;
+      }
+      .btn-lvl1 {
+        border: 1px solid #4f378a;
+        padding: 8px 16px;
+        text-transform: uppercase;
+        font-family: "Geist Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        transition: background 0.2s ease;
+      }
+      .btn-lvl1:hover {
+        background: #e9ddff;
+      }
+      .dark .btn-lvl1:hover {
+        background: #4f378a;
+        color: white;
+      }
+    </style>
+  </head>
+  <body
+    class="dark selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopAppBar -->
+    <header
+      class="bg-surface/80 dark:bg-surface-container-lowest/60 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_1px_0_0_rgba(255,255,255,0.1)]"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-6 max-w-[1200px] mx-auto"
+      >
+        <div class="flex items-center gap-4">
+          <span
+            class="material-symbols-outlined text-primary dark:text-primary-fixed"
+            data-icon="terminal"
+            >terminal</span
+          >
+          <span
+            class="font-mono-label text-mono-label tracking-widest uppercase text-on-surface dark:text-surface-bright"
+            >Takaki OS</span
+          >
+        </div>
+        <nav class="hidden md:flex gap-8 items-center">
+          <a
+            class="font-mono-label text-mono-label text-primary dark:text-primary-fixed-dim border-b-2 border-primary"
+            href="#"
+            >System</a
+          >
+          <a
+            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors"
+            href="#"
+            >Projects</a
+          >
+          <a
+            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors"
+            href="#"
+            >Files</a
+          >
+          <a
+            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors"
+            href="#"
+            >Network</a
+          >
+        </nav>
+        <button
+          class="font-mono-label text-mono-label text-primary dark:text-primary-fixed hover:backdrop-blur-3xl hover:bg-surface-variant/20 transition-all duration-300 px-4 py-2 border border-outline-variant/30"
+        >
+          SKIP INITIALIZATION
+        </button>
+      </div>
+    </header>
+    <main class="max-w-[800px] mx-auto py-20 px-8 min-h-screen">
+      <!-- Initialization Progress Section -->
+      <section class="mb-16">
+        <div class="flex justify-between items-end mb-4">
+          <h2
+            class="font-mono-label text-mono-label text-primary uppercase tracking-[0.2em]"
+          >
+            Initialization_Sequence
+          </h2>
+          <span class="font-mono-label text-mono-label text-on-surface-variant"
+            >25% Complete</span
+          >
+        </div>
+        <div class="initialization-bar-container">
+          <div class="initialization-bar-fill"></div>
+        </div>
+        <p
+          class="mt-4 font-mono-label text-[10px] text-outline text-right uppercase"
+        >
+          Status: Core_Memory_Refinement_In_Progress
+        </p>
+      </section>
+      <!-- Main Content Area: Level 1 Refinement -->
+      <section class="space-y-12">
+        <div class="card-lvl1">
+          <div class="flex flex-col gap-6">
+            <div
+              class="inline-flex items-center gap-2 text-tertiary dark:text-tertiary-fixed-dim"
+            >
+              <span
+                class="material-symbols-outlined text-[20px]"
+                data-icon="memory"
+                >memory</span
+              >
+              <h1 class="font-headline-lvl2 text-headline-lvl2">
+                Memory Unlocked: About Me
+              </h1>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+              <div class="md:col-span-2 space-y-4">
+                <p
+                  class="font-body-standard text-body-standard text-on-surface-variant dark:text-outline-variant leading-relaxed"
+                >
+                  I am Takaki, a full-stack engineering student currently
+                  navigating the intersection of low-level systems and modern
+                  web architecture. My focus lies in understanding the "how"
+                  behind the "what"—deconstructing complex frameworks to their
+                  bare-metal foundations.
+                </p>
+                <p
+                  class="font-body-standard text-body-standard text-on-surface-variant dark:text-outline-variant leading-relaxed"
+                >
+                  Currently exploring: Rust for systems programming, distributed
+                  network protocols, and the evolution of interface design from
+                  terminal-based workflows to high-fidelity immersive
+                  environments.
+                </p>
+              </div>
+              <div
+                class="aspect-square bg-surface-container-highest dark:bg-inverse-surface border border-outline-variant/20 overflow-hidden"
+              >
+                <img
+                  class="w-full h-full object-cover grayscale contrast-125 opacity-70"
+                  data-alt="A macro close-up of a vintage computer circuit board with visible traces and solder points. The lighting is cold and industrial, casting long shadows that emphasize the physical texture of the hardware. The color palette is restricted to metallic grays and muted blues, evoking a technical and academic atmosphere consistent with level one initialization."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuChNK1twH39eYB-PGtQjIwcZWjC-xlY-Ih2xqwrK_XAiG36fJLqiUIN0XBNaAGrYGkh9Sf1lfZLTbixv7ImmLMcd7k3JrbcNiJp08ibtjdfNa-JDODeqlJ2_yLTuDYqUxFK_Xm3qwkUgh0rKFoqJ5qdMqos6jZRLziIUSA9z7fOAKFzfy8BdkHeGt5v5MWy8QUjxioQPi7T-silLnhgFaosQZEKFzfj41GX7qRVihEoMpyTcWVhqOXVfZCaADkgWeHQ6RQF2A8YsZFB"
+                />
+              </div>
+            </div>
+            <div
+              class="pt-8 border-t border-outline-variant/20 flex justify-between items-center"
+            >
+              <div class="flex gap-4">
+                <div
+                  class="px-3 py-1 bg-surface-container dark:bg-surface-variant/10 border border-outline-variant text-mono-label text-[10px] uppercase"
+                >
+                  Node.js
+                </div>
+                <div
+                  class="px-3 py-1 bg-surface-container dark:bg-surface-variant/10 border border-outline-variant text-mono-label text-[10px] uppercase"
+                >
+                  PostgreSQL
+                </div>
+                <div
+                  class="px-3 py-1 bg-surface-container dark:bg-surface-variant/10 border border-outline-variant text-mono-label text-[10px] uppercase"
+                >
+                  Systems
+                </div>
+              </div>
+              <button class="btn-lvl1 flex items-center gap-2 group">
+                <span>[Unlock Projects]</span>
+                <span
+                  class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform"
+                  data-icon="lock_open"
+                  >lock_open</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Subtle Grid Info -->
+        <div class="grid grid-cols-2 gap-4">
+          <div
+            class="border border-outline-variant/20 p-4 font-mono-label text-mono-label text-on-surface-variant/60"
+          >
+            <span class="block mb-1 text-primary">01 // INTERESTS</span>
+            <ul class="list-none space-y-1">
+              <li>&gt; Distributed Systems</li>
+              <li>&gt; Cryptographic Protocols</li>
+              <li>&gt; Human-Computer Interaction</li>
+            </ul>
+          </div>
+          <div
+            class="border border-outline-variant/20 p-4 font-mono-label text-mono-label text-on-surface-variant/60"
+          >
+            <span class="block mb-1 text-primary">02 // ARCHIVE_DATA</span>
+            <ul class="list-none space-y-1">
+              <li>Entries: 42</li>
+              <li>Status: Fragmented</li>
+              <li>Integrity: 0.88</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="border-t border-outline-variant/10 bg-transparent py-8 mt-20"
+    >
+      <div
+        class="max-w-[1200px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <div class="text-on-surface-variant font-mono-label text-mono-label">
+          © 2024 TAKAKI_OS // INITIALIZATION_COMPLETE
+        </div>
+        <div class="flex gap-8">
+          <span
+            class="font-mono-label text-mono-label text-tertiary dark:text-tertiary-fixed-dim"
+            >Status: Online</span
+          >
+          <span
+            class="font-mono-label text-mono-label text-tertiary dark:text-tertiary-fixed-dim"
+            >Latency: 24ms</span
+          >
+          <span
+            class="font-mono-label text-mono-label text-tertiary dark:text-tertiary-fixed-dim"
+            >Build: v4.0.1</span
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Micro-interaction for the progress bar or elements
+      document.addEventListener("DOMContentLoaded", () => {
+        const fill = document.querySelector(".initialization-bar-fill");
+        // Subtle pulse effect on the initialization bar
+        setInterval(() => {
+          fill.style.opacity = "0.8";
+          setTimeout(() => {
+            fill.style.opacity = "1";
+          }, 500);
+        }, 3000);
+
+        // Level 1: Log initialization state to console for technical flair
+        console.log(
+          "%c TAKAKI OS | LEVEL 1 INITIALIZED ",
+          "background: #4f378a; color: #fff; font-weight: bold; padding: 4px;",
+        );
+        console.log("Memory access: Partial (25%)");
+        console.log("Styles: Refined Sans-Serif / Light-Gray Neutral");
+      });
+    </script>
+  </body>
+</html>
