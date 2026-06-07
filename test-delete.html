@@ -4,6 +4,11 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Geist+Mono:wght@100..900&amp;display=swap"
       rel="stylesheet"
@@ -12,11 +17,49 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        background-color: #020617; /* Deep Navy Base */
+        background-image:
+          linear-gradient(to right, rgba(30, 41, 59, 0.2) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(30, 41, 59, 0.2) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .glass-panel {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(103, 80, 164, 0.3);
+      }
+      .glow-border {
+        box-shadow:
+          0 0 15px rgba(103, 80, 164, 0.2),
+          inset 0 0 10px rgba(103, 80, 164, 0.1);
+      }
+      .node-line {
+        background: linear-gradient(90deg, transparent, #6750a4, transparent);
+        height: 1px;
+        width: 100%;
+      }
+      @keyframes pulse-cyan {
+        0%,
+        100% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .cursor-blink {
+        animation: pulse-cyan 1s infinite;
+      }
+    </style>
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -24,22 +67,22 @@
           extend: {
             colors: {
               "tertiary-fixed": "#ffdf93",
-              background: "#fdf7ff",
-              "surface-container": "#f2ecf4",
+              background: "#020617",
+              "surface-container": "#1e1b2e",
               error: "#ba1a1a",
-              "surface-container-high": "#ece6ee",
+              "surface-container-high": "#2b2938",
               "primary-container": "#6750a4",
-              surface: "#fdf7ff",
+              surface: "#020617",
               "on-tertiary-fixed": "#241a00",
               "on-secondary-fixed-variant": "#4b4263",
               "on-secondary": "#ffffff",
               "on-primary-container": "#e0d2ff",
               "on-error-container": "#93000a",
               "on-secondary-fixed": "#1f1635",
-              "surface-container-highest": "#e6e0e9",
+              "surface-container-highest": "#363445",
               "secondary-container": "#e1d4fd",
               "primary-fixed": "#e9ddff",
-              "surface-container-low": "#f8f2fa",
+              "surface-container-low": "#16141f",
               "on-primary": "#ffffff",
               "surface-dim": "#ded8e0",
               "inverse-primary": "#cfbcff",
@@ -49,37 +92,37 @@
               tertiary: "#765b00",
               primary: "#4f378a",
               "on-error": "#ffffff",
-              "on-background": "#1d1b20",
-              "inverse-surface": "#322f35",
+              "on-background": "#e6e0e9",
+              "inverse-surface": "#f5eff7",
               "primary-fixed-dim": "#cfbcff",
-              "outline-variant": "#cbc4d2",
-              "on-surface": "#1d1b20",
-              "on-surface-variant": "#494551",
+              "outline-variant": "#494551",
+              "on-surface": "#e6e0e9",
+              "on-surface-variant": "#cbc4d2",
               "on-primary-fixed-variant": "#4f378a",
               "surface-bright": "#fdf7ff",
               "secondary-fixed": "#e9ddff",
-              secondary: "#63597c",
-              "surface-variant": "#e6e0e9",
+              secondary: "#cdc0e9",
+              "surface-variant": "#494551",
               "on-secondary-container": "#645a7d",
               "on-primary-fixed": "#22005d",
               "error-container": "#ffdad6",
-              "inverse-on-surface": "#f5eff7",
+              "inverse-on-surface": "#1d1b20",
               "on-tertiary-fixed-variant": "#594400",
               "tertiary-container": "#c9a74d",
               "secondary-fixed-dim": "#cdc0e9",
               "on-tertiary": "#ffffff",
-              "surface-container-lowest": "#ffffff",
-              outline: "#7a7582",
+              "surface-container-lowest": "#0b0a14",
+              outline: "#938f99",
             },
             borderRadius: {
-              DEFAULT: "0.125rem",
-              lg: "0.25rem",
-              xl: "0.5rem",
-              full: "0.75rem",
+              DEFAULT: "2px",
+              lg: "4px",
+              xl: "8px",
+              full: "9999px",
             },
             spacing: {
               unit: "4px",
-              margins: "{'lvl_0': '0px', 'lvl_1_4': '32px'}",
+              margins: "32px",
               gutter: "24px",
               "container-max": "1200px",
             },
@@ -99,10 +142,6 @@
                   fontWeight: "700",
                 },
               ],
-              "body-legacy": [
-                "16px",
-                { lineHeight: "normal", fontWeight: "400" },
-              ],
               "mono-label": [
                 "12px",
                 { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "500" },
@@ -120,276 +159,368 @@
         },
       };
     </script>
-    <style>
-      body {
-        background-color: #f2ecf4; /* Level 1 light gray surface */
-        color: #1d1b20;
-        font-family: "Geist", sans-serif;
-        transition: all 0.5s ease;
-      }
-      .dark body {
-        background-color: #1d1b20;
-        color: #e6e0e9;
-      }
-      .initialization-bar-container {
-        width: 100%;
-        height: 8px;
-        background: #cbc4d2;
-        border-radius: 2px;
-        overflow: hidden;
-      }
-      .initialization-bar-fill {
-        height: 100%;
-        width: 25%;
-        background: #4f378a;
-        transition: width 1s ease-in-out;
-      }
-      .card-lvl1 {
-        border: 1px solid #cbc4d2;
-        background: #fdf7ff;
-        padding: 24px;
-      }
-      .dark .card-lvl1 {
-        border: 1px solid #494551;
-        background: #2b2930;
-      }
-      .btn-lvl1 {
-        border: 1px solid #4f378a;
-        padding: 8px 16px;
-        text-transform: uppercase;
-        font-family: "Geist Mono", monospace;
-        font-size: 12px;
-        letter-spacing: 0.1em;
-        transition: background 0.2s ease;
-      }
-      .btn-lvl1:hover {
-        background: #e9ddff;
-      }
-      .dark .btn-lvl1:hover {
-        background: #4f378a;
-        color: white;
-      }
-    </style>
   </head>
-  <body
-    class="dark selection:bg-primary-container selection:text-on-primary-container"
-  >
-    <!-- TopAppBar -->
+  <body class="text-on-surface font-body-standard min-h-screen">
+    <!-- Top Navigation Bar -->
     <header
-      class="bg-surface/80 dark:bg-surface-container-lowest/60 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_1px_0_0_rgba(255,255,255,0.1)]"
+      class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface-container-lowest/60 backdrop-blur-xl shadow-2xl dark:shadow-[0_0_40px_-15px_rgba(103,80,164,0.3)]"
     >
       <div
-        class="flex justify-between items-center px-8 py-6 max-w-[1200px] mx-auto"
+        class="flex justify-between items-center px-8 py-6 max-w-container-max mx-auto"
       >
         <div class="flex items-center gap-4">
           <span
-            class="material-symbols-outlined text-primary dark:text-primary-fixed"
+            class="material-symbols-outlined text-primary-fixed"
             data-icon="terminal"
             >terminal</span
           >
-          <span
+          <h1
             class="font-mono-label text-mono-label tracking-widest uppercase text-on-surface dark:text-surface-bright"
-            >Takaki OS</span
           >
+            Takaki OS
+          </h1>
         </div>
-        <nav class="hidden md:flex gap-8 items-center">
+        <nav class="hidden md:flex items-center gap-8">
           <a
-            class="font-mono-label text-mono-label text-primary dark:text-primary-fixed-dim border-b-2 border-primary"
+            class="font-mono-label text-mono-label text-primary dark:text-primary-fixed-dim border-b-2 border-primary py-1"
             href="#"
-            >System</a
+            >SYSTEM_MAP</a
           >
           <a
-            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors"
+            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors py-1"
             href="#"
-            >Projects</a
+            >ARCHIVE</a
           >
           <a
-            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors"
+            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors py-1"
             href="#"
-            >Files</a
-          >
-          <a
-            class="font-mono-label text-mono-label text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors"
-            href="#"
-            >Network</a
+            >NETWORK</a
           >
         </nav>
         <button
-          class="font-mono-label text-mono-label text-primary dark:text-primary-fixed hover:backdrop-blur-3xl hover:bg-surface-variant/20 transition-all duration-300 px-4 py-2 border border-outline-variant/30"
+          class="bg-primary-container/20 border border-primary/50 text-primary-fixed font-mono-label text-mono-label px-4 py-2 hover:bg-primary-container/40 transition-all active:scale-95"
         >
           SKIP INITIALIZATION
         </button>
       </div>
     </header>
-    <main class="max-w-[800px] mx-auto py-20 px-8 min-h-screen">
+    <main class="max-w-container-max mx-auto px-8 py-12 pb-32">
       <!-- Initialization Progress Section -->
       <section class="mb-16">
         <div class="flex justify-between items-end mb-4">
-          <h2
-            class="font-mono-label text-mono-label text-primary uppercase tracking-[0.2em]"
-          >
-            Initialization_Sequence
-          </h2>
-          <span class="font-mono-label text-mono-label text-on-surface-variant"
-            >25% Complete</span
-          >
+          <div class="space-y-1">
+            <p class="font-mono-label text-mono-label text-primary-fixed-dim">
+              INITIALIZATION_PHASE_03
+            </p>
+            <h2 class="font-headline-lvl2 text-headline-lvl2">
+              System Resolution: 75%
+            </h2>
+          </div>
+          <div class="text-right">
+            <p class="font-mono-label text-mono-label opacity-60">
+              EST_TIME: 04:12:00
+            </p>
+            <p class="font-mono-label text-mono-label text-primary-fixed">
+              STATUS: CALIBRATING_CORES
+            </p>
+          </div>
         </div>
-        <div class="initialization-bar-container">
-          <div class="initialization-bar-fill"></div>
-        </div>
-        <p
-          class="mt-4 font-mono-label text-[10px] text-outline text-right uppercase"
+        <div
+          class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden border border-outline-variant/20"
         >
-          Status: Core_Memory_Refinement_In_Progress
-        </p>
-      </section>
-      <!-- Main Content Area: Level 1 Refinement -->
-      <section class="space-y-12">
-        <div class="card-lvl1">
-          <div class="flex flex-col gap-6">
+          <div
+            class="h-full bg-gradient-to-right from-primary to-secondary w-[75%] relative"
+          >
             <div
-              class="inline-flex items-center gap-2 text-tertiary dark:text-tertiary-fixed-dim"
+              class="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.3)_50%,transparent_100%)] animate-[shimmer_2s_infinite]"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <div class="grid grid-cols-12 gap-gutter">
+        <!-- Terminal Panel -->
+        <aside class="col-span-12 lg:col-span-4 space-y-gutter">
+          <div
+            class="glass-panel p-6 rounded-xl border-l-4 border-l-primary glow-border"
+          >
+            <div
+              class="flex items-center gap-2 mb-4 border-b border-outline-variant/20 pb-2"
             >
-              <span
-                class="material-symbols-outlined text-[20px]"
-                data-icon="memory"
-                >memory</span
+              <span class="w-3 h-3 rounded-full bg-error"></span>
+              <span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+              <span class="w-3 h-3 rounded-full bg-primary"></span>
+              <span class="font-mono-label text-mono-label ml-2 opacity-60"
+                >bash — 80x24</span
               >
-              <h1 class="font-headline-lvl2 text-headline-lvl2">
-                Memory Unlocked: About Me
-              </h1>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              <div class="md:col-span-2 space-y-4">
-                <p
-                  class="font-body-standard text-body-standard text-on-surface-variant dark:text-outline-variant leading-relaxed"
+            <div class="font-mono-label text-mono-label space-y-3">
+              <p class="text-primary-fixed-dim">$ whoami</p>
+              <p class="text-on-surface">takaki_root // administrator</p>
+              <p class="text-primary-fixed-dim">$ status</p>
+              <div class="grid grid-cols-2 gap-2 text-[10px]">
+                <span class="opacity-60">CPU_LOAD:</span>
+                <span class="text-secondary">|||||||||| 42%</span>
+                <span class="opacity-60">MEM_ALLOC:</span>
+                <span class="text-secondary">|||||||||||| 68%</span>
+                <span class="opacity-60">UPLINK:</span>
+                <span class="text-secondary">ACTIVE</span>
+              </div>
+              <p class="text-primary-fixed-dim">
+                $
+                <span
+                  class="cursor-blink bg-primary-fixed-dim w-2 h-4 inline-block align-middle"
+                ></span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="glass-panel p-6 rounded-xl border border-outline-variant/10"
+          >
+            <h3 class="font-mono-label text-mono-label text-primary-fixed mb-4">
+              NOTIFICATIONS_FEED
+            </h3>
+            <ul class="space-y-4 font-mono-label text-[10px]">
+              <li
+                class="flex gap-3 items-start border-l border-outline-variant/30 pl-3"
+              >
+                <span class="text-primary">14:02</span>
+                <span class="opacity-80"
+                  >Frontend module integration verified. No leaks
+                  detected.</span
                 >
-                  I am Takaki, a full-stack engineering student currently
-                  navigating the intersection of low-level systems and modern
-                  web architecture. My focus lies in understanding the "how"
-                  behind the "what"—deconstructing complex frameworks to their
-                  bare-metal foundations.
-                </p>
-                <p
-                  class="font-body-standard text-body-standard text-on-surface-variant dark:text-outline-variant leading-relaxed"
+              </li>
+              <li
+                class="flex gap-3 items-start border-l border-outline-variant/30 pl-3"
+              >
+                <span class="text-primary">13:58</span>
+                <span class="opacity-80"
+                  >Syncing Mindset nodes with neural architecture...</span
                 >
-                  Currently exploring: Rust for systems programming, distributed
-                  network protocols, and the evolution of interface design from
-                  terminal-based workflows to high-fidelity immersive
-                  environments.
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <!-- Skill Regions Map -->
+        <section
+          class="col-span-12 lg:col-span-8 relative min-h-[600px] glass-panel rounded-xl p-8 overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-10 pointer-events-none"
+            style="
+              background-image: radial-gradient(
+                circle at 50% 50%,
+                #6750a4 0%,
+                transparent 70%
+              );
+            "
+          ></div>
+          <header class="relative z-10 mb-12">
+            <p class="font-mono-label text-mono-label text-primary-fixed mb-1">
+              MAP_EXPANDED
+            </p>
+            <h3
+              class="font-headline-lvl2 text-headline-lvl2 uppercase tracking-tighter"
+            >
+              Skill Regions
+            </h3>
+          </header>
+          <!-- Connected Nodes Layout -->
+          <div class="relative z-10 h-[450px] w-full">
+            <!-- Frontend Node -->
+            <div class="absolute top-10 left-10 w-48 group">
+              <div
+                class="glass-panel p-4 rounded-xl border border-primary/40 hover:border-primary transition-all cursor-crosshair group-hover:bg-primary/10"
+              >
+                <span
+                  class="material-symbols-outlined text-primary mb-2"
+                  data-icon="web"
+                  >web</span
+                >
+                <h4 class="font-mono-label text-mono-label font-bold mb-1">
+                  FRONTEND
+                </h4>
+                <p class="text-[10px] opacity-60">
+                  UI/UX, React, Tailwind, Framer
                 </p>
               </div>
               <div
-                class="aspect-square bg-surface-container-highest dark:bg-inverse-surface border border-outline-variant/20 overflow-hidden"
+                class="node-line mt-4 group-hover:scale-x-110 transition-transform origin-left"
+              ></div>
+            </div>
+            <!-- Backend Node -->
+            <div class="absolute top-10 right-10 w-48 group text-right">
+              <div
+                class="glass-panel p-4 rounded-xl border border-primary/40 hover:border-primary transition-all cursor-crosshair group-hover:bg-primary/10"
               >
-                <img
-                  class="w-full h-full object-cover grayscale contrast-125 opacity-70"
-                  data-alt="A macro close-up of a vintage computer circuit board with visible traces and solder points. The lighting is cold and industrial, casting long shadows that emphasize the physical texture of the hardware. The color palette is restricted to metallic grays and muted blues, evoking a technical and academic atmosphere consistent with level one initialization."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuChNK1twH39eYB-PGtQjIwcZWjC-xlY-Ih2xqwrK_XAiG36fJLqiUIN0XBNaAGrYGkh9Sf1lfZLTbixv7ImmLMcd7k3JrbcNiJp08ibtjdfNa-JDODeqlJ2_yLTuDYqUxFK_Xm3qwkUgh0rKFoqJ5qdMqos6jZRLziIUSA9z7fOAKFzfy8BdkHeGt5v5MWy8QUjxioQPi7T-silLnhgFaosQZEKFzfj41GX7qRVihEoMpyTcWVhqOXVfZCaADkgWeHQ6RQF2A8YsZFB"
-                />
-              </div>
-            </div>
-            <div
-              class="pt-8 border-t border-outline-variant/20 flex justify-between items-center"
-            >
-              <div class="flex gap-4">
-                <div
-                  class="px-3 py-1 bg-surface-container dark:bg-surface-variant/10 border border-outline-variant text-mono-label text-[10px] uppercase"
-                >
-                  Node.js
-                </div>
-                <div
-                  class="px-3 py-1 bg-surface-container dark:bg-surface-variant/10 border border-outline-variant text-mono-label text-[10px] uppercase"
-                >
-                  PostgreSQL
-                </div>
-                <div
-                  class="px-3 py-1 bg-surface-container dark:bg-surface-variant/10 border border-outline-variant text-mono-label text-[10px] uppercase"
-                >
-                  Systems
-                </div>
-              </div>
-              <button class="btn-lvl1 flex items-center gap-2 group">
-                <span>[Unlock Projects]</span>
                 <span
-                  class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform"
-                  data-icon="lock_open"
-                  >lock_open</span
+                  class="material-symbols-outlined text-primary mb-2"
+                  data-icon="database"
+                  >database</span
                 >
-              </button>
+                <h4 class="font-mono-label text-mono-label font-bold mb-1">
+                  BACKEND
+                </h4>
+                <p class="text-[10px] opacity-60">
+                  Node, Python, PostgreSQL, AWS
+                </p>
+              </div>
+              <div
+                class="node-line mt-4 group-hover:scale-x-110 transition-transform origin-right"
+              ></div>
+            </div>
+            <!-- Systems Node -->
+            <div class="absolute bottom-10 left-10 w-48 group">
+              <div
+                class="node-line mb-4 group-hover:scale-x-110 transition-transform origin-left"
+              ></div>
+              <div
+                class="glass-panel p-4 rounded-xl border border-primary/40 hover:border-primary transition-all cursor-crosshair group-hover:bg-primary/10"
+              >
+                <span
+                  class="material-symbols-outlined text-primary mb-2"
+                  data-icon="settings_ethernet"
+                  >settings_ethernet</span
+                >
+                <h4 class="font-mono-label text-mono-label font-bold mb-1">
+                  SYSTEMS
+                </h4>
+                <p class="text-[10px] opacity-60">
+                  Docker, CI/CD, Linux, Security
+                </p>
+              </div>
+            </div>
+            <!-- Mindset Node -->
+            <div class="absolute bottom-10 right-10 w-48 group text-right">
+              <div
+                class="node-line mb-4 group-hover:scale-x-110 transition-transform origin-right"
+              ></div>
+              <div
+                class="glass-panel p-4 rounded-xl border border-primary/40 hover:border-primary transition-all cursor-crosshair group-hover:bg-primary/10"
+              >
+                <span
+                  class="material-symbols-outlined text-primary mb-2"
+                  data-icon="psychology"
+                  >psychology</span
+                >
+                <h4 class="font-mono-label text-mono-label font-bold mb-1">
+                  MINDSET
+                </h4>
+                <p class="text-[10px] opacity-60">
+                  Strategy, Product, Leadership
+                </p>
+              </div>
+            </div>
+            <!-- Central Core -->
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 flex items-center justify-center"
+            >
+              <div
+                class="absolute inset-0 rounded-full border-2 border-dashed border-primary/20 animate-[spin_20s_linear_infinite]"
+              ></div>
+              <div
+                class="absolute inset-4 rounded-full border border-primary/40 animate-[spin_10s_linear_infinite_reverse]"
+              ></div>
+              <div
+                class="w-16 h-16 bg-primary-container rounded-full shadow-[0_0_40px_rgba(103,80,164,0.6)] flex items-center justify-center relative overflow-hidden"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-3xl"
+                  data-icon="hub"
+                  data-weight="fill"
+                  >hub</span
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Subtle Grid Info -->
-        <div class="grid grid-cols-2 gap-4">
+        </section>
+      </div>
+      <!-- Call to Action -->
+      <div class="mt-16 flex flex-col items-center">
+        <button class="relative group">
           <div
-            class="border border-outline-variant/20 p-4 font-mono-label text-mono-label text-on-surface-variant/60"
-          >
-            <span class="block mb-1 text-primary">01 // INTERESTS</span>
-            <ul class="list-none space-y-1">
-              <li>&gt; Distributed Systems</li>
-              <li>&gt; Cryptographic Protocols</li>
-              <li>&gt; Human-Computer Interaction</li>
-            </ul>
-          </div>
+            class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+          ></div>
           <div
-            class="border border-outline-variant/20 p-4 font-mono-label text-mono-label text-on-surface-variant/60"
+            class="relative px-12 py-4 bg-surface-container-lowest text-primary-fixed border border-primary/30 rounded-full font-mono-label text-mono-label tracking-[0.2em] uppercase transition-all duration-300 hover:text-white flex items-center gap-4"
           >
-            <span class="block mb-1 text-primary">02 // ARCHIVE_DATA</span>
-            <ul class="list-none space-y-1">
-              <li>Entries: 42</li>
-              <li>Status: Fragmented</li>
-              <li>Integrity: 0.88</li>
-            </ul>
+            <span>Unlock Final Mode</span>
+            <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
           </div>
-        </div>
-      </section>
+        </button>
+        <p class="mt-4 font-mono-label text-[10px] opacity-40 uppercase">
+          Warning: Structural reality shifts may occur upon initialization.
+        </p>
+      </div>
     </main>
-    <!-- Footer -->
+    <!-- Footer Area -->
     <footer
-      class="border-t border-outline-variant/10 bg-transparent py-8 mt-20"
+      class="full-width border-t border-outline-variant/10 bg-transparent"
     >
       <div
-        class="max-w-[1200px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-4 gap-unit max-w-container-max mx-auto"
       >
         <div class="text-on-surface-variant font-mono-label text-mono-label">
           © 2024 TAKAKI_OS // INITIALIZATION_COMPLETE
         </div>
-        <div class="flex gap-8">
-          <span
-            class="font-mono-label text-mono-label text-tertiary dark:text-tertiary-fixed-dim"
+        <div
+          class="flex gap-6 font-mono-label text-mono-label text-on-surface-variant/60"
+        >
+          <span class="hover:text-primary transition-colors cursor-default"
             >Status: Online</span
           >
-          <span
-            class="font-mono-label text-mono-label text-tertiary dark:text-tertiary-fixed-dim"
+          <span class="hover:text-primary transition-colors cursor-default"
             >Latency: 24ms</span
           >
-          <span
-            class="font-mono-label text-mono-label text-tertiary dark:text-tertiary-fixed-dim"
+          <span class="hover:text-primary transition-colors cursor-default"
             >Build: v4.0.1</span
           >
         </div>
       </div>
     </footer>
+    <!-- Bottom Nav (Mobile Only Visibility) -->
+    <nav
+      class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-surface-container-lowest/40 backdrop-blur-2xl border-t border-outline-variant/20"
+    >
+      <div
+        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline opacity-70"
+      >
+        <span
+          class="material-symbols-outlined"
+          data-icon="settings_input_component"
+          >settings_input_component</span
+        >
+        <span class="font-mono-label text-[10px]">System</span>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center bg-primary-container/80 text-on-primary-container rounded-full px-6 py-2 shadow-[0_0_15px_rgba(103,80,164,0.4)] animate-pulse"
+      >
+        <span class="material-symbols-outlined" data-icon="terminal"
+          >terminal</span
+        >
+        <span class="font-mono-label text-[10px]">Projects</span>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline opacity-70"
+      >
+        <span class="material-symbols-outlined" data-icon="folder_open"
+          >folder_open</span
+        >
+        <span class="font-mono-label text-[10px]">Files</span>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline opacity-70"
+      >
+        <span class="material-symbols-outlined" data-icon="hub">hub</span>
+        <span class="font-mono-label text-[10px]">Network</span>
+      </div>
+    </nav>
     <script>
-      // Micro-interaction for the progress bar or elements
-      document.addEventListener("DOMContentLoaded", () => {
-        const fill = document.querySelector(".initialization-bar-fill");
-        // Subtle pulse effect on the initialization bar
-        setInterval(() => {
-          fill.style.opacity = "0.8";
-          setTimeout(() => {
-            fill.style.opacity = "1";
-          }, 500);
-        }, 3000);
-
-        // Level 1: Log initialization state to console for technical flair
-        console.log(
-          "%c TAKAKI OS | LEVEL 1 INITIALIZED ",
-          "background: #4f378a; color: #fff; font-weight: bold; padding: 4px;",
-        );
-        console.log("Memory access: Partial (25%)");
-        console.log("Styles: Refined Sans-Serif / Light-Gray Neutral");
+      // Micro-interactions for terminal typing effect simulation
+      const terminalOutput = document.querySelector(".terminal-feed");
+      // Simple ambient "grid" parallax or mouse glow could be added here
+      document.addEventListener("mousemove", (e) => {
+        const glow = document.createElement("div");
+        // This is purely for atmospheric feeling if we wanted a trailing light
       });
     </script>
   </body>

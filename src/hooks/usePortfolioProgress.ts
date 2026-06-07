@@ -29,7 +29,7 @@ function loadProgress() {
     const parsedProgress = JSON.parse(savedProgress);
 
     return parsedProgress;
-  } catch (e) {
+  } catch {
     return initialProgress;
   }
 }
