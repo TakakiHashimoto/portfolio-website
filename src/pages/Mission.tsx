@@ -46,14 +46,14 @@ function Mission({ theme }: Props) {
               "Create opportunities for people whose potential is still buried.",
             ],
           ].map(([label, copy]) => (
-            <article key={label} className={`${theme.card} min-h-[300px]`}>
+            <article key={label} className={`${theme.card} min-h-75`}>
               <p className={theme.label}>{label}</p>
               <p className="mt-8 text-2xl leading-relaxed text-white">{copy}</p>
             </article>
           ))}
         </section>
 
-        <section className="mx-auto mt-24 max-w-5xl rounded-[2.5rem] border border-white/[0.08] bg-white/[0.04] p-10 text-center backdrop-blur-2xl md:p-20">
+        <section className="mx-auto mt-24 max-w-5xl rounded-[2.5rem] border border-white/8 bg-white/4 p-10 text-center backdrop-blur-2xl md:p-20">
           <blockquote className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-6xl">
             I want to build products that help people unlock their potential.
           </blockquote>

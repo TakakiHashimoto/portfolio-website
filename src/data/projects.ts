@@ -7,6 +7,7 @@ export type Project = {
   lessons: string[];
   githubUrl?: string;
   liveUrl?: string;
+  to: string;
 };
 
 export const projects: Project[] = [
@@ -24,6 +25,7 @@ export const projects: Project[] = [
       "Error-state design",
       "Production data flow",
     ],
+    to: "https://github.com/TakakiHashimoto/expense_tracker",
   },
   {
     id: "mern-shop",
@@ -39,6 +41,7 @@ export const projects: Project[] = [
       "Stock validation",
       "Frontend/backend contracts",
     ],
+    to: "https://github.com/Cornerstone-CICCC/react-js-midterm-project-takakialone/tree/feature/takaki",
   },
   {
     id: "movie-tracker",
@@ -62,5 +65,6 @@ export const projects: Project[] = [
       "Auth flow",
       "Reusable components",
     ],
+    to: "#",
   },
 ];

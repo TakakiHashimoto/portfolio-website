@@ -36,14 +36,14 @@ function Home({ theme }: Props) {
         <h1>Takaki's Portfolio</h1>
         <h2>A map of my engineering journey.</h2>
 
-        <p>
+        {/* <p>
           This website starts unfinished. Explore each region to restore the
           full interface.
-        </p>
+        </p> */}
 
         <p>
           <Link onClick={handleBeginJourney} to="/about">
-            Enter the Map
+            About me
           </Link>
         </p>
 
@@ -76,10 +76,10 @@ function Home({ theme }: Props) {
     return (
       <main className={theme.container}>
         <section className="mx-auto mb-32 max-w-5xl text-center md:mb-48">
-          <p className="mb-8 inline-flex rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 font-mono text-xs uppercase tracking-[0.3em] text-[#8be9ff]/80 backdrop-blur-xl">
+          <p className="mb-8 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 font-mono text-xs uppercase tracking-[0.3em] text-[#8be9ff]/80 backdrop-blur-xl">
             Observatory terminal v4.0
           </p>
-          <h1 className="bg-gradient-to-br from-[#cfbcff] via-white to-[#8be9ff] bg-clip-text text-7xl font-extrabold leading-[0.98] tracking-[-0.065em] text-transparent md:text-9xl">
+          <h1 className="bg-linear-to-br from-[#cfbcff] via-white to-[#8be9ff] bg-clip-text text-7xl font-extrabold leading-[0.98] tracking-[-0.065em] text-transparent md:text-9xl">
             Final Observatory.
             <br />
             The full map restored.
@@ -108,7 +108,7 @@ function Home({ theme }: Props) {
           </div>
 
           <div className="relative grid gap-7 md:grid-cols-6">
-            <div className="pointer-events-none absolute left-[8%] right-[8%] top-1/2 hidden h-px bg-gradient-to-r from-transparent via-[#8be9ff]/30 to-transparent md:block" />
+            <div className="pointer-events-none absolute left-[8%] right-[8%] top-1/2 hidden h-px bg-linear-to-r from-transparent via-[#8be9ff]/30 to-transparent md:block" />
             {mapRegions.map((region, index) => (
               <Link
                 key={region.id}
@@ -134,7 +134,7 @@ function Home({ theme }: Props) {
           </div>
         </section>
 
-        <section className="mx-auto mt-32 max-w-5xl rounded-[2.5rem] border border-white/[0.08] bg-white/[0.04] px-8 py-16 text-center shadow-[inset_0_0_30px_rgba(255,255,255,0.025),0_30px_100px_rgba(0,0,0,0.3)] backdrop-blur-2xl md:mt-48 md:px-16">
+        <section className="mx-auto mt-32 max-w-5xl rounded-[2.5rem] border border-white/8 bg-white/4 px-8 py-16 text-center shadow-[inset_0_0_30px_rgba(255,255,255,0.025),0_30px_100px_rgba(0,0,0,0.3)] backdrop-blur-2xl md:mt-48 md:px-16">
           <p className={theme.label}>The vision</p>
           <blockquote className="mt-8 text-4xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-6xl">
             Build with enough clarity that complexity becomes useful.
@@ -166,15 +166,13 @@ function Home({ theme }: Props) {
             return (
               <div
                 key={region.id}
-                className={`${theme.card} flex min-h-[300px] flex-col ${
+                className={`${theme.card} flex min-h-75 flex-col ${
                   unlocked ? "" : "opacity-40 grayscale"
                 }`}
               >
                 <p className={theme.label}>Level {region.requiredLevel}</p>
                 <h2 className="mt-2 text-xl font-bold">{region.name}</h2>
-                <p className={`${theme.body} mt-3`}>
-                  {region.description}
-                </p>
+                <p className={`${theme.body} mt-3`}>{region.description}</p>
 
                 <div className="mt-auto pt-8">
                   {unlocked ? (
