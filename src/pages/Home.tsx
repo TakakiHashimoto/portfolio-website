@@ -87,7 +87,7 @@ function Home({ theme }: Props) {
           {/* <p className="mb-8 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 font-mono text-xs uppercase tracking-[0.3em] text-[#8be9ff]/80 backdrop-blur-xl">
             Observatory terminal v4.0
           </p> */}
-          <h1 className="bg-linear-to-br from-[#cfbcff] via-white to-[#8be9ff] bg-clip-text text-3xl font-extrabold leading-[0.98] tracking-[-0.065em] text-transparent md:text-9xl">
+          <h1 className="bg-linear-to-br from-[#cfbcff] via-white to-[#8be9ff] bg-clip-text text-5xl font-extrabold leading-[0.98] tracking-[-0.065em] text-transparent md:text-9xl">
             Welcome to
             <br />
             Map of Takaki!
