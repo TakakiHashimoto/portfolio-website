@@ -45,7 +45,7 @@ function Header() {
   return (
     <>
       <header className={theme.nav}>
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex max-w-300 flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between">
           <div>
             <Link to="/" className="font-bold tracking-tight">
               Map of Me

@@ -4,6 +4,7 @@ import { usePortfolioStore } from "../store/portfolioStore";
 import { useState } from "react";
 import Avatar from "../components/Avatar";
 import Note from "../components/Note";
+import { MoveRight } from "lucide-react";
 
 type Theme = {
   container: string;
@@ -28,7 +29,7 @@ function Home({ theme }: Props) {
   const skipToFullPortfolio = usePortfolioStore(
     (state) => state.skipToFullPortfolio,
   );
-  const isLegacy = theme.panel === "";
+  const isLegacy = level === 0;
 
   function handleBeginJourney() {
     unlockLevel(1);
@@ -47,6 +48,7 @@ function Home({ theme }: Props) {
         </p> */}
 
         <p>
+          begin here: &nbsp;
           <Link onClick={handleBeginJourney} to="/about">
             About me
           </Link>
@@ -96,10 +98,16 @@ function Home({ theme }: Props) {
             what comes next.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/projects" className={theme.buttonSecondary}>
+            <Link
+              to="/projects"
+              className={`${theme.buttonSecondary} text-xl font-bold`}
+            >
               Explore me
             </Link>
-            <Link to="/contact" className={theme.buttonPrimary}>
+            <Link
+              to="/contact"
+              className={`${theme.buttonPrimary} text-xl font-bold`}
+            >
               Contact me
             </Link>
           </div>
@@ -123,9 +131,6 @@ function Home({ theme }: Props) {
                   index === 3 ? "md:col-start-2" : ""
                 } ${index === 4 ? "border-[#8be9ff]/30" : ""}`}
               >
-                <span className="mb-8 block font-mono text-xs uppercase tracking-[0.25em] text-[#8be9ff]/60">
-                  Node 0{index + 1} / online
-                </span>
                 <h3 className="text-2xl font-semibold tracking-tight text-white">
                   {region.name}
                 </h3>
@@ -133,7 +138,7 @@ function Home({ theme }: Props) {
                   {region.description}
                 </p>
                 <span className="mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-[#8be9ff]">
-                  Access node <span aria-hidden="true">-&gt;</span>
+                  Access <MoveRight />
                 </span>
               </Link>
             ))}
@@ -196,7 +201,7 @@ function Home({ theme }: Props) {
           })}
         </div>
 
-        {level === 0 ? (
+        {isLegacy ? (
           <Link
             onClick={handleBeginJourney}
             to="/about"

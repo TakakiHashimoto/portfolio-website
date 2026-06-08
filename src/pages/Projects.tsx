@@ -18,6 +18,9 @@ type Props = { theme: Theme };
 function Projects({ theme }: Props) {
   const unlockLevel = usePortfolioStore((state) => state.unlockLevel);
   const visitSection = usePortfolioStore((state) => state.visitSection);
+  const level = usePortfolioStore((state) => state.level);
+
+  const isUnlocked = level >= 4;
 
   function handleClick() {
     unlockLevel(4);
@@ -68,7 +71,7 @@ function Projects({ theme }: Props) {
           to="/mission"
           className={`${theme.buttonPrimary} mt-8 inline-flex`}
         >
-          Unlock final version
+          {isUnlocked ? "View final version" : "Unlock final version"}
         </Link>
       </section>
     </main>

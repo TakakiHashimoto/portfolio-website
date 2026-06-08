@@ -19,6 +19,10 @@ function Skills({ theme }: Props) {
   const unlockLevel = usePortfolioStore((state) => state.unlockLevel);
   const visitSection = usePortfolioStore((state) => state.visitSection);
 
+  const level = usePortfolioStore((state) => state.level);
+
+  const isUnlocked = level >= 3;
+
   function handleClick() {
     unlockLevel(3);
     visitSection("projects");
@@ -56,7 +60,7 @@ function Skills({ theme }: Props) {
           to="/projects"
           className={`${theme.buttonPrimary} mt-8 inline-flex`}
         >
-          Unlock Projects
+          {isUnlocked ? "View projects" : "Unlock Projects"}
         </Link>
       </section>
     </main>

@@ -23,7 +23,7 @@ function Mission({ theme }: Props) {
         <section className="mx-auto max-w-5xl py-12 text-center md:py-24">
           <p className={theme.label}>Final observatory / The vision</p>
           <h1 className={`${theme.heading} mx-auto mt-8 max-w-4xl`}>
-            Technology should reveal potential.
+            Technology is mere a tool to make a better world.
           </h1>
           <p className="mx-auto mt-10 max-w-3xl text-xl font-light leading-relaxed text-[#cbc4d2] md:text-2xl">
             I build to understand systems deeply, then turn that understanding
@@ -64,7 +64,7 @@ function Mission({ theme }: Props) {
               View systems
             </Link>
             <Link to="/contact" className={theme.buttonPrimary}>
-              Open uplink
+              Open contact
             </Link>
           </div>
         </section>

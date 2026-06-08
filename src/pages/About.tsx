@@ -19,6 +19,10 @@ function About({ theme }: Props) {
   const unlockLevel = usePortfolioStore((state) => state.unlockLevel);
   const visitSection = usePortfolioStore((state) => state.visitSection);
 
+  const level = usePortfolioStore((state) => state.level);
+
+  const isUnlocked = level >= 2;
+
   function handleClick() {
     unlockLevel(2);
     visitSection("skills");
@@ -76,7 +80,7 @@ function About({ theme }: Props) {
               to="/skills"
               className={`${theme.buttonPrimary} group inline-flex items-center justify-center gap-2`}
             >
-              <span>Continue to Growth Forest</span>
+              <span>{isUnlocked ? "View skills" : "Continue to skills"}</span>
 
               <MoveRight className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1" />
             </Link>
