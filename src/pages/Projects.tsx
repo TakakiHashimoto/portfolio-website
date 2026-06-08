@@ -28,7 +28,7 @@ function Projects({ theme }: Props) {
   return (
     <main className={theme.container}>
       <section className={theme.panel}>
-        <p className={theme.label}>Region unlocked: Engineering City</p>
+        <p className={theme.label}>Region unlocked: Projects</p>
         <h1 className={`${theme.heading} mt-3 pb-4`}>Projects</h1>
         <p className={`${theme.body} mt-6 max-w-2xl`}>
           These projects are artifacts from my engineering journey. Each one
@@ -55,7 +55,7 @@ function Projects({ theme }: Props) {
                 ))}
               </div>
               <ul className={`${theme.body} mt-auto space-y-3 pt-8`}>
-                {project.lessons.slice(0, 3).map((lesson) => (
+                {project.lessons.slice(0, 5).map((lesson) => (
                   <li key={lesson}>- {lesson}</li>
                 ))}
               </ul>
@@ -68,7 +68,7 @@ function Projects({ theme }: Props) {
           to="/mission"
           className={`${theme.buttonPrimary} mt-8 inline-flex`}
         >
-          Open Final Observatory
+          Unlock final version
         </Link>
       </section>
     </main>

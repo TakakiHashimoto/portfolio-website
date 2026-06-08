@@ -8,7 +8,15 @@ export const skillRegions: SkillRegion[] = [
   {
     region: "Frontend Region",
     description: "Building interfaces, interactions, and user experiences.",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind"],
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Tailwind",
+      "Nextjs",
+    ],
   },
   {
     region: "Backend Region",

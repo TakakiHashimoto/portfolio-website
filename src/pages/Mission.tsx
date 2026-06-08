@@ -28,6 +28,8 @@ function Mission({ theme }: Props) {
           <p className="mx-auto mt-10 max-w-3xl text-xl font-light leading-relaxed text-[#cbc4d2] md:text-2xl">
             I build to understand systems deeply, then turn that understanding
             into tools that make difficult things clearer and more accessible.
+            With the engineering skills I learn I want to make a better world
+            and make poeple happy. That's my goal.
           </p>
         </section>
 

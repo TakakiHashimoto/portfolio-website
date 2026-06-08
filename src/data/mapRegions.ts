@@ -12,7 +12,7 @@ export type MapRegion = {
 export const mapRegions: MapRegion[] = [
   {
     id: "home",
-    name: "Origin Gate",
+    name: "Origin",
     shortName: "Origin",
     route: "/",
     requiredLevel: 0,
@@ -20,7 +20,7 @@ export const mapRegions: MapRegion[] = [
   },
   {
     id: "about",
-    name: "Foundation Village",
+    name: "About Me",
     shortName: "About",
     route: "/about",
     requiredLevel: 1,
@@ -28,7 +28,7 @@ export const mapRegions: MapRegion[] = [
   },
   {
     id: "skills",
-    name: "Growth Forest",
+    name: "Skills",
     shortName: "Skills",
     route: "/skills",
     requiredLevel: 2,
@@ -36,7 +36,7 @@ export const mapRegions: MapRegion[] = [
   },
   {
     id: "projects",
-    name: "Engineering City",
+    name: "Projects",
     shortName: "Projects",
     route: "/projects",
     requiredLevel: 3,
@@ -44,7 +44,7 @@ export const mapRegions: MapRegion[] = [
   },
   {
     id: "mission",
-    name: "Final Observatory",
+    name: "Missions",
     shortName: "Mission",
     route: "/mission",
     requiredLevel: 4,

@@ -36,19 +36,20 @@ const unlockMessages: Record<
   { title: string; description: string }
 > = {
   1: {
-    title: "Foundation Village unlocked",
-    description: "The first region of the developer map is now online.",
+    title: "About me unlocked",
+    description: "The first region of the developer map is now available.",
   },
   2: {
-    title: "Growth Forest unlocked",
+    title: "Skill page unlocked",
     description: "Your path through the skill regions has opened.",
   },
   3: {
-    title: "Engineering City unlocked",
-    description: "Project systems and engineering artifacts are now accessible.",
+    title: "Projects page unlocked",
+    description:
+      "Project systems and engineering artifacts are now accessible.",
   },
   4: {
-    title: "Final Observatory unlocked",
+    title: "Final Version unlocked",
     description: "The full developer map has been restored.",
   },
 };
@@ -71,9 +72,7 @@ export const usePortfolioStore = create<PortfolioState>()(
           }
 
           const message = unlockMessages[nextLevel];
-          toast.success(message.title, {
-            description: message.description,
-          });
+          toast.success(message.title, { description: message.description });
 
           return { level: nextLevel };
         }),

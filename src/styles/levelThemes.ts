@@ -67,8 +67,7 @@ export const levelThemes: Record<
       "rounded-full bg-[#b8d99b] px-7 py-3 font-semibold text-base text-[#102016] transition hover:scale-105",
     buttonSecondary:
       "rounded-full border border-[#b8d99b]/30 px-7 py-3 text-base text-[#f3f8ee] hover:bg-[#b8d99b]/10",
-    card:
-      "rounded-3xl border border-[#b8d99b]/20 bg-[#243829]/80 p-7 transition hover:-translate-y-1 hover:border-[#b8d99b]/50 md:p-8",
+    card: "rounded-3xl border border-[#b8d99b]/20 bg-[#243829]/80 p-7 transition  hover:border-[#b8d99b]/50 md:p-8",
     badge:
       "rounded-full border border-[#b8d99b]/20 bg-[#b8d99b]/10 px-3 py-1 text-sm text-[#dbe8d2]",
     progressTrack: "h-2 rounded-full bg-[#243829]",
@@ -112,7 +111,7 @@ export const levelThemes: Record<
       "rounded-full border border-[#8be9ff]/25 bg-[#6750a4]/20 px-8 py-4 font-mono text-sm uppercase tracking-[0.16em] text-white transition hover:border-[#8be9ff]/50 hover:bg-[#6750a4]/40",
     buttonSecondary:
       "rounded-full border border-white/10 bg-white/[0.05] px-8 py-4 font-mono text-sm uppercase tracking-[0.16em] text-white/80 backdrop-blur-xl transition hover:border-[#8be9ff]/35 hover:bg-white/[0.08] hover:text-white",
-    card: "rounded-3xl border border-white/[0.08] bg-white/[0.04] p-7 shadow-[inset_0_0_20px_rgba(255,255,255,0.025),0_16px_50px_rgba(0,0,0,0.25)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-[#8be9ff]/30 hover:bg-white/[0.07] md:p-8",
+    card: "rounded-3xl border border-white/[0.08] bg-white/[0.04] p-7 shadow-[inset_0_0_20px_rgba(255,255,255,0.025),0_16px_50px_rgba(0,0,0,0.25)] backdrop-blur-xl transition duration-500 hover:border-[#8be9ff]/30 hover:bg-white/[0.07] md:p-8",
     badge:
       "rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 font-mono text-xs uppercase tracking-wider text-white/65",
     progressTrack: "h-2 rounded-full bg-white/10",

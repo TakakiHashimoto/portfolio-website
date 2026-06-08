@@ -27,7 +27,7 @@ function Skills({ theme }: Props) {
   return (
     <main className={theme.container}>
       <section className={theme.panel}>
-        <p className={theme.label}>Region unlocked: Growth Forest</p>
+        <p className={theme.label}>Region unlocked: Skills</p>
         <h1 className={`${theme.heading} mt-3`}>Skill Map</h1>
         <p className={`${theme.body} mt-6 max-w-2xl`}>
           I think of skills as connected regions, not isolated technologies.
@@ -37,11 +37,9 @@ function Skills({ theme }: Props) {
 
         <div className="mt-10 grid gap-7 lg:grid-cols-2">
           {skillRegions.map((region) => (
-            <article key={region.region} className={`${theme.card} min-h-[260px]`}>
+            <article key={region.region} className={`${theme.card} min-h-65`}>
               <h2 className="text-2xl font-bold">{region.region}</h2>
-              <p className={`${theme.body} mt-3`}>
-                {region.description}
-              </p>
+              <p className={`${theme.body} mt-3`}>{region.description}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 {region.skills.map((skill) => (
                   <span key={skill} className={theme.badge}>
@@ -58,7 +56,7 @@ function Skills({ theme }: Props) {
           to="/projects"
           className={`${theme.buttonPrimary} mt-8 inline-flex`}
         >
-          Enter Engineering City
+          Unlock Projects
         </Link>
       </section>
     </main>

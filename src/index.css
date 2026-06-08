@@ -23,7 +23,7 @@ body {
   background: white;
   color: black;
   font-family: "Times New Roman", Times, serif;
-  font-size: 28px;
+  font-size: 32px;
   padding: 8px;
 }
 
@@ -38,6 +38,7 @@ body {
 
 .legacy-html button {
   font-family: inherit;
+  font-size: 30px;
 }
 
 .final-observatory {
@@ -66,4 +67,151 @@ body {
   opacity: 0.035;
   pointer-events: none;
   content: "";
+}
+
+[data-sonner-toaster].unlock-toaster {
+  --width: min(540px, calc(100vw - 32px));
+}
+
+[data-sonner-toast].unlock-toast {
+  position: relative;
+  min-height: 132px;
+  overflow: hidden;
+  gap: 0;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 22px;
+  background: rgb(17 17 22 / 96%);
+  color: #fdf7ff;
+  box-shadow:
+    0 24px 70px rgb(0 0 0 / 50%),
+    inset 0 1px 0 rgb(255 255 255 / 5%);
+  backdrop-filter: blur(24px);
+  align-items: stretch;
+  transition:
+    translate 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 700ms ease,
+    height 700ms ease,
+    box-shadow 300ms ease;
+}
+
+[data-sonner-toast].unlock-toast[data-y-position="top"] {
+  translate: 0 -180px;
+  --y: translateY(-150%);
+}
+
+[data-sonner-toast].unlock-toast[data-mounted="true"] {
+  translate: 0 0;
+  --y: translateY(0);
+}
+
+[data-sonner-toaster].unlock-toaster
+  [data-sonner-toast].unlock-toast
+  [data-icon].unlock-toast-icon {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  align-self: stretch;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: white;
+  background: linear-gradient(160deg, #34e6a1, #08a96b);
+  box-shadow: inset -1px 0 rgb(255 255 255 / 18%);
+  border-radius: 50%;
+}
+
+[data-sonner-toaster].unlock-toaster
+  [data-sonner-toast].unlock-toast
+  [data-icon].unlock-toast-icon
+  svg {
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  stroke-width: 2.5;
+}
+
+[data-sonner-toaster].unlock-toaster
+  [data-sonner-toast].unlock-toast
+  [data-content].unlock-toast-content {
+  flex: 1;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  padding: 24px 40px 24px 45px;
+}
+
+[data-sonner-toast].unlock-toast .unlock-toast-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+[data-sonner-toast].unlock-toast .unlock-toast-description {
+  color: rgb(255 255 255 / 65%);
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+[data-sonner-toaster].unlock-toaster
+  [data-sonner-toast].unlock-toast
+  [data-close-button].unlock-toast-close {
+  top: 18px;
+  right: 18px;
+  left: auto;
+  width: 32px;
+  height: 32px;
+  transform: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 4%);
+  color: rgb(255 255 255 / 48%);
+}
+
+[data-sonner-toaster].unlock-toaster
+  [data-sonner-toast].unlock-toast
+  [data-close-button].unlock-toast-close
+  svg {
+  width: 16px;
+  height: 16px;
+}
+
+[data-sonner-toaster].unlock-toaster
+  [data-sonner-toast].unlock-toast
+  [data-close-button].unlock-toast-close:hover {
+  border-color: rgb(255 255 255 / 8%);
+  background: rgb(255 255 255 / 8%);
+  color: white;
+}
+
+@media (max-width: 520px) {
+  [data-sonner-toast].unlock-toast {
+    min-height: 104px;
+    border-radius: 18px;
+  }
+
+  [data-sonner-toaster].unlock-toaster
+    [data-sonner-toast].unlock-toast
+    [data-icon].unlock-toast-icon {
+    width: 78px;
+  }
+
+  [data-sonner-toaster].unlock-toaster
+    [data-sonner-toast].unlock-toast
+    [data-content].unlock-toast-content {
+    padding: 20px 52px 20px 20px;
+  }
+
+  [data-sonner-toast].unlock-toast .unlock-toast-title {
+    font-size: 16px;
+  }
+
+  [data-sonner-toast].unlock-toast .unlock-toast-description {
+    font-size: 14px;
+  }
 }

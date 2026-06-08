@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import { Toaster } from "sonner";
+import { Check, X } from "lucide-react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
@@ -17,18 +18,25 @@ function App() {
   return (
     <div className={theme.app}>
       <Toaster
+        className="unlock-toaster"
         position="top-center"
-        offset="24px"
-        gap={12}
-        richColors
+        offset="28px"
+        gap={14}
+        theme="dark"
         closeButton
+        icons={{
+          success: <Check aria-hidden="true" />,
+          close: <X aria-hidden="true" />,
+        }}
         toastOptions={{
-          duration: 4500,
+          duration: 6500,
           classNames: {
-            toast:
-              "min-w-[min(420px,calc(100vw-2rem))] border border-white/10 bg-[#111116]/95 text-white shadow-2xl backdrop-blur-xl",
-            title: "text-base font-semibold",
-            description: "text-sm text-white/65",
+            toast: "unlock-toast",
+            icon: "unlock-toast-icon",
+            content: "unlock-toast-content",
+            title: "unlock-toast-title",
+            description: "unlock-toast-description",
+            closeButton: "unlock-toast-close",
           },
         }}
       />

@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { usePortfolioStore } from "../store/portfolioStore";
+import { MoveRight } from "lucide-react";
 
 type Theme = {
   container: string;
@@ -28,12 +29,9 @@ function About({ theme }: Props) {
       <section className={theme.panel}>
         <div className="flex flex-col gap-8">
           <div>
-            <p className={theme.label}>Region unlocked: Foundation Village</p>
+            <p className={theme.label}>Region unlocked: About me</p>
 
             <div className="mt-3 flex items-center gap-3">
-              <span className="material-symbols-outlined text-[24px]">
-                memory
-              </span>
               <h1 className={theme.heading}>About Me</h1>
             </div>
           </div>
@@ -41,9 +39,9 @@ function About({ theme }: Props) {
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
             <div className="space-y-4 md:col-span-2">
               <p className={theme.body}>
-                I am Takaki, a full-stack engineering student currently
-                navigating the intersection of low-level systems and modern web
-                architecture.
+                I am Takaki, a full-stack engineering student, also tech
+                enthusist! I love building apps as well as gaining knowledge of
+                technology by understanding underneith process.
               </p>
               <p className={theme.body}>
                 My focus lies in understanding the "how" behind the "what" -
@@ -79,9 +77,8 @@ function About({ theme }: Props) {
               className={`${theme.buttonPrimary} group inline-flex items-center justify-center gap-2`}
             >
               <span>Continue to Growth Forest</span>
-              <span className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">
-                forest
-              </span>
+
+              <MoveRight className="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
