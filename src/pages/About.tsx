@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { usePortfolioStore } from "../store/portfolioStore";
 import { MoveRight } from "lucide-react";
+import takakiBack from "../assets/takaki-back.jpg";
 
 type Theme = {
   container: string;
@@ -63,7 +64,7 @@ function About({ theme }: Props) {
               <img
                 className="h-full w-full object-cover grayscale contrast-125 opacity-70"
                 alt="A macro close-up of a vintage computer circuit board."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuChNK1twH39eYB-PGtQjIwcZWjC-xlY-Ih2xqwrK_XAiG36fJLqiUIN0XBNaAGrYGkh9Sf1lfZLTbixv7ImmLMcd7k3JrbcNiJp08ibtjdfNa-JDODeqlJ2_yLTuDYqUxFK_Xm3qwkUgh0rKFoqJ5qdMqos6jZRLziIUSA9z7fOAKFzfy8BdkHeGt5v5MWy8QUjxioQPi7T-silLnhgFaosQZEKFzfj41GX7qRVihEoMpyTcWVhqOXVfZCaADkgWeHQ6RQF2A8YsZFB"
+                src={takakiBack}
               />
             </div>
           </div>

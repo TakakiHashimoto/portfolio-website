@@ -103,8 +103,8 @@ export const levelThemes: Record<
     panel:
       "rounded-[2rem] border border-white/[0.08] bg-white/[0.04] p-8 shadow-[inset_0_0_20px_rgba(255,255,255,0.03),0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-2xl md:p-12",
     heading:
-      "bg-gradient-to-br from-[#cfbcff] to-[#8be9ff] bg-clip-text text-6xl font-extrabold leading-[1.05] tracking-[-0.055em] text-transparent md:text-8xl",
-    body: "text-lg leading-[1.8] text-[#cbc4d2]",
+      "bg-gradient-to-br from-[#cfbcff] to-[#8be9ff] bg-clip-text text-4xl font-extrabold leading-[1.05] tracking-[-0.055em] text-transparent md:text-8xl",
+    body: "text-md leading-[1.8] text-[#cbc4d2] md:text-lg",
     label:
       "font-mono text-xs font-medium uppercase tracking-[0.3em] text-[#8be9ff]/80",
     buttonPrimary:

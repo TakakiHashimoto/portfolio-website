@@ -1,6 +1,6 @@
 function Note() {
   return (
-    <div className="absolute top-5 right-28 z-50 w-88 rounded-3xl border border-white/10 bg-white/8 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
+    <div className="absolute bottom-25 right-0 md:top-5 md:right-28 md:bottom-auto z-50 w-88 rounded-3xl border border-white/10 bg-white/8 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
       <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#8be9ff]/80">
         Personal note
       </p>
