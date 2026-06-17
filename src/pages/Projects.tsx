@@ -42,7 +42,7 @@ function Projects({ theme }: Props) {
         <div className="mt-10 grid gap-7 md:grid-cols-2 ">
           {projects.map((project) => (
             <Link
-              to={project.to}
+              to={project.liveUrl ? project.liveUrl : project.to}
               key={project.id}
               className={`${theme.card} flex min-h-140 flex-col`}
               target="_blank"
